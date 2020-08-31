@@ -39,14 +39,18 @@ namespace ClassLibrary1
 
             int ret;
             var moduelName = typeof(NativeInvokes).Assembly.GetName().Name;
+
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\zlib1.dll");
-            Trace.WriteLine("zlib1 loaded, module: {0}", ret.ToString());
+            Trace.WriteLine(string.Format("zlib1 loaded, module address: {0}\n", ret));
+
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\brotlicommon.dll");
-            Trace.WriteLine("brotlicommon loaded, module: {0}", ret.ToString());
+            Trace.WriteLine(string.Format("brotlicommon loaded, module address: {0}\n", ret));
+
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\brotlidec.dll");
-            Trace.WriteLine("brotlidec loaded, module: {0}", ret.ToString());
+            Trace.WriteLine(string.Format("brotlidec loaded, module address: {0}\n", ret));
+
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\freetype.dll");
-            Trace.WriteLine("freetype loaded, module: {0}", ret.ToString());
+            Trace.WriteLine(string.Format("freetype loaded, module: {0}\n", ret));
         }
     }
 }
