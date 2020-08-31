@@ -30,6 +30,7 @@ namespace App1
         {
             this.InitializeComponent();
 
+            System.Diagnostics.Trace.WriteLine("NativeInvokes.Init() calling!!!");
             NativeInvokes.Init();
 
             var ret = NativeInvokes.FT_Init_FreeType(out var lib);

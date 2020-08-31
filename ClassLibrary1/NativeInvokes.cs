@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ClassLibrary1
 {
@@ -39,9 +40,13 @@ namespace ClassLibrary1
             int ret;
             var moduelName = typeof(NativeInvokes).Assembly.GetName().Name;
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\zlib1.dll");
+            Trace.WriteLine("zlib1 loaded, module: {0}", ret.ToString());
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\brotlicommon.dll");
+            Trace.WriteLine("brotlicommon loaded, module: {0}", ret.ToString());
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\brotlidec.dll");
+            Trace.WriteLine("brotlidec loaded, module: {0}", ret.ToString());
             ret = LoadPackagedLibrary(moduelName + @"\runtimes\" + archPrefix + @"\freetype.dll");
+            Trace.WriteLine("freetype loaded, module: {0}", ret.ToString());
         }
     }
 }
